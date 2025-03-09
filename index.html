@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPEN JOKI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        .morph {
+            background: linear-gradient(45deg, #fcfafb, #858181);
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            border-radius: 0%;
+            filter: blur(100px);
+            animation: morph 8s infinite alternate ease-in-out;
+        }
+        
+        @keyframes morph {
+            0% { border-radius: 50% 50% 40% 60%; }
+            50% { border-radius: 40% 60% 50% 50%; }
+            100% { border-radius: 50% 40% 60% 50%; }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 flex flex-col items-center text-white relative overflow-x-hidden" style="background: url('coding.jpg') center/cover no-repeat; min-height: 100vh; overflow-y: auto;">
+    <div class="morph" style="top: 0%; left: 0%;"></div>
+    <div class="text-center z-10 bg-black bg-opacity-50 p-8 rounded-lg relative mt-10">
+        <img src="Tugas.jpg" alt="Profil" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-black-500">
+        <h1 class="text-4xl font-bold mb-2">OPEN JOKI</h1>
+        <p class="text-lg opacity-80 mb-4">Bantu tugas anda selesai tepat waktu,
+                                           dengan harga yang terjangkau tergantung tingkat kesulitan dan deadline tugas anda!</p>
+        <button class="bg-pink-500 hover:bg-pink-600 px-6 py-3 rounded-full text-lg font-semibold transition-all">PESAN SEKARANG👇👇</button>
+    </div>
+    
+    <!-- Daftar Joki -->
+    <div class="mt-20 bg-black bg-opacity-50 p-6 rounded-lg w-3/4 z-10 relative">
+        <div class="morph" style="top: 10%; right: 10%;"></div>
+        <h2 class="text-2xl font-bold text-center mb-4">LAYANAN KAMI👇👇</h2>
+        <ul class="list-disc list-inside text-lg relative">
+            <li>Tugas Kuliah (Essay, Makalah, Laporan praktikum tulis tangan/ketik,dan jurnal)</li>
+            <li>Tugas sekolah dari SMA/SMK (laporan magang,makalah dalam bentuk bahasa inggris/indonesia,karya ilmiah)</li>
+            <li>Coding (Web,project,landing page,dll)</li>
+            <li>Desain Grafis dan Video Editing</li>
+        </ul>
+    </div>
+    
+    <!-- Hubungi Kami -->
+    <div class="mt-20 bg-black bg-opacity-50 p-6 rounded-lg w-3/4 text-center z-10 relative mb-20">
+        <div class="morph" style="bottom: 10%; left: 15%;"></div>
+        <h2 class="text-2xl font-bold mb-4">HUBUNGI KAMI</h2>
+        <p class="text-lg">MELALUI👇👇:</p>
+        <div class="mt-4 space-y-3 relative">
+            <a href="agam85767@gmail.com" class="block bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-full text-lg font-semibold transition-all">Email: agam85767@gmail.com</a>
+            <a href="https://wa.me/6281234567890" class="block bg-green-500 hover:bg-green-600 px-6 py-3 rounded-full text-lg font-semibold transition-all">WhatsApp: +6287856643707</a>
+        </div>
+    </div>
+    
+    <script>
+        gsap.from("h1", { opacity: 0, y: -50, duration: 1 });
+        gsap.from("p", { opacity: 0, y: 20, duration: 1, delay: 0.5 });
+        gsap.from("button", { opacity: 0, scale: 0.8, duration: 1, delay: 1 });
+        gsap.from("img", { opacity: 0, scale: 0.5, duration: 1, delay: 1.2 });
+        gsap.from(".mt-20", { opacity: 0, y: 30, duration: 1, delay: 1.5, stagger: 0.3 });
+        
+        gsap.to(".morph", {
+            x: "random(-30, 30)",
+            y: "random(-30, 30)",
+            duration: 5,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut"
+        });
+    </script>
+</body>
+</html>
